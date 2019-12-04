@@ -20,6 +20,7 @@ const createMenu = (arr) => {
 
   //select elements
   const menuButton = document.querySelector('.menu-button');
+
   
 
   //loop over the parameter
@@ -32,14 +33,17 @@ const createMenu = (arr) => {
   menu.appendChild(ul);
 
   menuButton.addEventListener('click', () => {
-    console.log('clicked')
     menu.classList.toggle('menu--open');
   });
+
+
 
   return menu;
 };
 
 header.appendChild(createMenu(menuItems))
+
+
 
 
 /* 

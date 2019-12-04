@@ -103,12 +103,18 @@ const createArticle = (data) => {
   const firstParagraph = document.createElement('p');
   const secondParagraph = document.createElement('p');
   const thirdParagraph = document.createElement('p');
+  const buttonContainer = document.createElement('div');
   const buttonOpen = document.createElement('span');
+  const buttonClose = document.createElement('span');
 
   //add classes
   article.classList.add('article');
   date.classList.add('date');
   buttonOpen.classList.add('expandButton');
+  buttonClose.classList.add('expandButton', 'hide-btn')
+
+  //inline style
+  article.style.transition = '750ms';
 
   //appending
   article.appendChild(title);
@@ -116,7 +122,9 @@ const createArticle = (data) => {
   article.appendChild(firstParagraph);
   article.appendChild(secondParagraph);
   article.appendChild(thirdParagraph);
-  article.appendChild(buttonOpen);
+  article.appendChild(buttonContainer);
+  buttonContainer.appendChild(buttonOpen);
+  buttonContainer.appendChild(buttonClose);
 
   //content
   title.textContent = data.title;
@@ -124,10 +132,19 @@ const createArticle = (data) => {
   firstParagraph.textContent = data.firstParagraph;
   secondParagraph.textContent = data.secondParagraph;
   thirdParagraph.textContent = data.thirdParagraph;
-  buttonOpen.textContent = 'Click here'
+  buttonOpen.textContent = '\u25bc';
+  buttonClose.textContent = '\u25b2';
+
+  buttonContainer.addEventListener('click', () => {
+    buttonOpen.classList.toggle('hide-btn');
+    buttonClose.classList.toggle('hide-btn');
+    article.classList.toggle('article-open');
+  })
 
   buttonOpen.addEventListener('click', () => {
-    article.classList.toggle('article-open');
+    article.style.backgroundColor = '#ECECEC';
+    buttonOpen.style.backgroundColor = '#ECECEC';
+    buttonClose.style.backgroundColor = '#ECECEC';
   })
 
   return article;
