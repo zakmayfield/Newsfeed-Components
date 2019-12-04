@@ -1,5 +1,6 @@
 /* This is the data we will be using, study it but don't change anything, yet. */
 
+
 let menuItems = [
   'Students',
   'Faculty',
@@ -9,9 +10,41 @@ let menuItems = [
   'Log Out'
 ];
 
+const header = document.querySelector('.header');
+
+const createMenu = (arr) => {
+  //create elements
+  const menu = document.createElement('div');
+    menu.classList.add('menu');
+  const ul = document.createElement('ul');
+
+  //select elements
+  const menuButton = document.querySelector('.menu-button');
+  
+
+  //loop over the parameter
+  arr.forEach( item => {
+    const li = document.createElement('li');
+    li.textContent = item;
+    ul.appendChild(li);
+  });
+
+  menu.appendChild(ul);
+
+  menuButton.addEventListener('click', () => {
+    console.log('clicked')
+    menu.classList.toggle('menu--open');
+  });
+
+  return menu;
+};
+
+header.appendChild(createMenu(menuItems))
+
+
 /* 
 
-  Step 1: Write a function that will create a menu component as seen below:
+  Step 1: Write a function that will create a menu component as seen below: ***
 
   <div class="menu">
     <ul>
@@ -22,7 +55,7 @@ let menuItems = [
   The function takes an array as its only argument.
 
   Step 2: Inside this function, iterate over the array creating a list item <li> element for each item in the array. 
-  Add those items to the <ul>
+  Add those items to the <ul> ***
 
   Step 3: Using a DOM selector, select the menu button (the element with a class of 'menu-button') currently on the DOM.
 
