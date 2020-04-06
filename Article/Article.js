@@ -87,11 +87,11 @@ const data = [
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
   },
   {
-    title: 'Zak rocks',
+    title: 'Zak Mayfield',
     date: 'Feb 13th, 2020',
-    firstParagraph: 'Sup bro',
-    secondParagraph: 'Yoooo',
-    thirdParagraph: 'Ayyyeeeee'
+    firstParagraph: 'It is Wednesday my dudes.',
+    secondParagraph: 'Whats in the booox!?',
+    thirdParagraph: 'Winter is coming.'
   }
 ];
 
